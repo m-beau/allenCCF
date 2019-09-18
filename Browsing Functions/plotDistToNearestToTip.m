@@ -1,9 +1,9 @@
-function borders = plotDistToNearestToTip(m, p, av, st, rpl, error_length, active_site_start, probage_past_tip_to_plot, show_parent_category, show_region_table)
+function [borders, name, otherDist] = plotDistToNearestToTip(m, p, av, st, rpl, error_length, active_site_start, probage_past_tip_to_plot, show_parent_category, show_region_table)
 
 
 % these are the query points along the probe tract
-yc = 10*[0:(rpl + probage_past_tip_to_plot*100 )] - 0;
-t = yc/10; % dividing by 10 accounts for the 10um resolution of the atlas
+yc = 10*[0:(rpl + probage_past_tip_to_plot*100 )] - 0; % In microns
+t = yc/10; % In pixels (10 microns/pixel)
 x = m(1)+p(1)*t;
 y = m(2)+p(2)*t;
 z = m(3)+p(3)*t;
